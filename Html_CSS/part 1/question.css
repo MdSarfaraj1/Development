@@ -1,0 +1,34 @@
+h1{
+    color: rgb(79, 17, 252);
+    text-align: center;
+    text-decoration: underline;
+}
+h3{
+    text-align: center;
+    color: #000;
+}
+h4{
+    text-align: center;
+    color: #f00;
+}
+p{
+    color: #f00;
+    text-align: center;
+}
+body{
+    font-family: Georgia;
+}
+a{
+    color: #08f743;
+    text-decoration: none;
+}
+button{
+    background-color: rgb(233, 219, 26);
+    color: blueviolet;
+}
+textarea{
+    color: rgb(22, 219, 245);
+}
+span{
+    text-decoration: underline;
+}

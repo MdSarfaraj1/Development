@@ -1,0 +1,45 @@
+.container
+{
+    width:600px;
+    height: 300px;
+    background-color: rgb(50, 219, 219);
+    display: grid;
+  /*  grid-template-rows: 100px 50px 50px 50px 50px;
+    grid-template-columns: 100px 100px 100px;
+    */
+    grid-template-rows: repeat(3,1fr);
+    /* same can be writtin as grid-template-rows: 1fr 1fr 1fr 1fr*/
+
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 30px;
+    column-gap: 30px;
+    /* same can be written as grid-gap:10px 10px*/
+    justify-items: start;
+    align-items: center;
+    /* both can be written as place-item: value*/
+    
+
+}
+.a
+{
+    width: 95px;
+    height: 50px;
+    background-color: rgb(141, 228, 28);
+    text-align: center;
+    border: 5px solid rgb(255, 41, 41);
+   
+}
+#k
+{
+   
+    grid-column-start:2 ;
+    grid-column-end: 4;
+    grid-row: 2/span 2;
+    align-self: start;
+    place-self: start;
+    /* same can be written as grid-column: 2/4
+    or
+    grid-column:2/ span 2
+    */ 
+  
+}

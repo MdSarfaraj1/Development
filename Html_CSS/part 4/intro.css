@@ -1,0 +1,66 @@
+#k
+{
+    
+    display:inline-block ;
+ height: 200px;
+ width:200px;
+ background-color: aqua;
+ margin:2px;
+ transition:  3s ease-in-out 0.2s;/* there are different tramsition function
+/* transition-delay: 0.001;/* wait for0.001 second and  then apply
+ transition*/
+ /*transition-timing-function: steps;*/
+}
+#y{
+    display:inline-block ;
+    height: 200px;
+ width:200px;
+ transition: 3s;
+ background-color: rgb(7, 223, 97);
+ margin:2px;
+}
+#l
+{
+display:inline-block ;
+height: 200px;
+ width:200px;
+ transition: 1.5s;
+ background-color: rgb(223, 111, 7);
+ margin:2px;
+ box-shadow: 5px 5px 10px rgb(12, 1, 1);
+}
+#l:hover{
+    box-shadow: 1px 10px 10px rgb(12, 1, 1)
+
+}
+#m{
+    display:inline-block ;
+height: 200px;
+ width:200px;
+ transition: 3s;
+ background-color: rgb(223, 7, 7);
+ margin:2px;
+}
+#y:hover{
+  
+    transform: scale(0.5);  /*  change size decrease in x but increase in y*/
+  /*  rotate: 45deg;*/
+    transform: translate(50px,50px);
+    transform: skew(45deg);
+
+}
+#k:hover
+{
+    border-radius: 50%;
+ background-color: rgb(235, 17, 17);
+ margin-top: 400px;
+}
+
+#login{
+    color: rgba(255, 0, 0, 0);
+    
+}
+#signup
+{
+    opacity: 0;  
+}

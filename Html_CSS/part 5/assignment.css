@@ -1,0 +1,41 @@
+#container
+{
+    width: 400px;
+    height: 400px;
+    background-color: #f0f8ff;
+    border: 5px solid rgb(97, 174, 238);
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    align-items: center;
+}
+#container div{
+   
+    height: 100px;
+     width: 100px;
+     background-color: rgb(74, 77, 80);
+     border: 3px solid black;
+    font-size: 50px;
+    border-radius: 5px;
+    text-align: center;
+   
+} 
+#container2
+{
+    margin: 10px;
+    height: 50px;
+    width: 500px;
+    background-color: rgb(241, 165, 51);
+    display: flex;
+    justify-content: end;
+    border: 2px solid rgb(209, 50, 10);
+    border-radius: 5px;
+}
+#container2 div{
+    height: 50px;
+    width: 80px;
+   
+    font-size: 24px;
+    text-align: justify;
+    line-height: 50px;
+}

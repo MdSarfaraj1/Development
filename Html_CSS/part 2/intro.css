@@ -1,0 +1,87 @@
+/*  universal selector
+ *{color:red;} */
+ body{
+   background-color:#00215E;
+   width: 300px;
+ }
+ h1{
+   color: #b92b27;
+ }
+ h3,h2{
+    /*element selecvtor*/
+    color:#FC4100;
+ }
+ #login{ /* id selector*/
+    background-color: #b92b27;
+    color: aliceblue;
+ }
+ #signup{
+    background-color: #b92b27;
+    color: aliceblue;
+ }
+ .up{
+    /* class selector-  .classname*/
+    background-color: rgb(181, 241, 16);
+    color: rgb(252, 12, 12);
+ }
+ nav ul li a{
+    /* decendent tag*/
+    color: rgb(173, 202, 10);
+    text-decoration: none;
+}
+ul li{
+   color: salmon;
+}
+p{
+   color: #FFC55A;
+}
+p+h3{
+    /* sibling combinator*/
+    color: rgb(255, 81, 0);
+    text-decoration: underline;
+}
+.up+button{
+   /*sibling cominator*/ /* select all the button which is after
+     the up class in the same level)*/
+    color: dodgerblue;
+    background-color: #FFC55A;
+}
+div>#my{
+    /* child combinator*/
+    color: #b92b27;
+}
+a[href="#"]/* attribut slector */
+{
+   text-decoration: none;
+   color: chocolate;
+}
+label{
+   color: blue;
+}
+input[type="submit"]
+{
+   color: chartreuse;
+   background-color: rgb(255, 94, 0);
+}
+h3:hover{
+   color:black;
+}
+button:active{
+   color: #000000;
+}
+h3:nth-of-type(3)
+{
+   color: rgb(0, 0, 0);
+}
+h3::selection{
+   color: pink;
+}
+/*input
+{
+   background-color: inherit;
+}
+*/
+p>a{
+   color: #35e612;
+   text-decoration: none;
+}

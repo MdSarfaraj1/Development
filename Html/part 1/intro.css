@@ -1,0 +1,26 @@
+h1{
+    color: rgb(247, 103, 7);
+   text-align: center;
+   text-decoration:  dotted red underline;
+   font-family: monospace,didot,sans-serif ;
+   /* basically the font among the three the browser support
+   ,it will display the page in that form*/
+   text-transform: uppercase;
+   /*to make the headings uppercase*/
+    
+}
+p{
+    color:rgb(7, 241, 18);
+    background-color:rgb(247, 103, 7);
+    text-align: justify;
+  /*-  text-decoration: pink line-through;*/
+    line-height: 2.5;
+    
+/* letter-spacing: 10px;*/
+
+    
+}
+button{
+    color :rgb(254, 255, 252);
+    background-color:rgb(10, 33, 240);
+}

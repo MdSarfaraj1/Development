@@ -1,0 +1,33 @@
+#hello{
+    border-width: 5px;
+ 
+    border-style:solid; 
+    border-color: black;
+     width: 200px;
+     border-top-left-radius: 25px;
+     border-bottom-right-radius: 25px;
+     display: inline-block;
+     margin: 5px;
+    
+     
+}
+div{
+  border-width: 5px;
+ 
+   border-style:solid; 
+   border-color: black;
+    width: 200px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+    /* all can be written as : border:5px dotted black;*/
+}
+h1
+{
+    border-left: 5px dotted blue;
+    border-right: 5px solid green;
+    width: 300px;
+    padding-left: 25px;
+}

@@ -1,0 +1,52 @@
+#a1
+{
+    width: 300px;
+    height: 300px;
+    background-color: red;   
+
+     margin: 5px;
+     position: sticky;
+      /* to change the default position which is static we can use absolute*/
+     z-index: 1;
+     /* became the higher priority to show
+      its conent among other having position properies*/
+    
+     top: 25px;
+     left:25px
+ 
+}
+#a2
+{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(9, 228, 20);
+    margin: 5px;
+    position: absolute;
+    /*it will find that is there any of his ancestor have
+     the position property, if hve then it he will go near to that
+     if not then go nearest to the root which is html*/
+     top: 0px;
+}
+#a3
+{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(124, 34, 226);  
+    position: relative;
+
+      margin: 5px;
+}
+
+#a4
+{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(153, 223, 25);  
+  
+}
+.parent
+{
+    border: 5px solid black;
+    margin: 200px 100px;
+    
+}

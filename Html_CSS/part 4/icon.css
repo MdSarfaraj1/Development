@@ -1,0 +1,17 @@
+.card{
+    width: 190px;
+    height: 200px;
+    border: 2px  solid black;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px black;
+    transition: 1s;
+    color:red;
+
+
+}
+.card:hover{
+    box-shadow:  4px 6px black;
+}
+img{
+    width: 190px;
+}

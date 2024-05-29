@@ -1,0 +1,21 @@
+.loader{
+ position: relative;
+ left: 45%;
+    border:5px solid#f3f3f3;
+    border-top:5px solid goldenrod;
+    
+    border-radius:50%;
+    width:120px;
+    height:120px;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin{
+    0%{/*Set rotation  to 0degrees*/
+    rotate: 50deg;}
+    50%{
+        border-top-color: greenyellow;
+    }
+    100%{/*Set rotation to 360 degrees*/
+    rotate: 360deg;
+border-top-color: red;}
+}
