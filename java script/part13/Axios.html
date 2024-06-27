@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        border: 5px solid black;
+        border-radius: 5px;
+    }
+</style>
+<body>
+   <!-- <h1>Get Random fact about dogs</h1> -->
+   <!-- <h1>Get Random images of dogs</h1> -->
+   <h1>Get jokes</h1>
+   <button type="submit">Get</button>
+   <p id="answer"></p>
+   <img >
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script> <!-- link for axios -->
+    
+    <script>
+        // get cat facts
+                    //     async function cat()
+                    //     {
+                    //         try{
+                    //         let url="https://catfact.ninja/fact";
+                    //         let res=await axios.get(url);// no need to convert it in json data as axios gives the data in json format
+                    //         document.querySelector("p").innerText=res.data.fact;
+                    // ;  
+                    //         }
+                    //         catch(e){
+                    //         console.log(e);
+                    //         }  
+                    //     }
+                    //     document.querySelector("button").addEventListener("click",()=>{
+                    //         cat();});
+        // get dog image
+                    //  async function dog()
+                    //     {
+                    //         try{
+                    //         let url="https://dog.ceo/api/breeds/image/random";  //link of the api
+                    //         let res=await axios.get(url);
+                    //         document.querySelector("img").setAttribute("src",res.data.message);
+                    // ;  
+                    //         }
+                    //         catch(e){
+                    //         console.log(e);
+                    //         }  
+                    //     }
+                    //     document.querySelector("button").addEventListener("click",()=>{
+                    //         dog();});
+                        
+      // pass headers in axios
+                     async function jokes()
+                        {
+                            try{
+                            let url="https://icanhazdadjoke.com/";  //link of the api
+                            let head={headers: {Accept:"application/json"}};  // header
+                            let res=await axios.get(url,head);// passing header with api
+                            console.log(res);
+                            document.querySelector("p").innerText=res.data.joke
+                    ;  
+                            }
+                            catch(e){
+                            console.log(e);
+                            }  
+                        }
+                        document.querySelector("button").addEventListener("click",()=>{
+                            jokes();});
+    </script> 
+</body>
+</html>    
+    

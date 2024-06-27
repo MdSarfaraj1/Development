@@ -7,31 +7,67 @@
 </head>
 <body>
     <script>
-        let api=`{
-    "activity": "Create a compost pile",
-    "availability": 0.15,
-    "type": "diy",
-    "participants": 1,
-    "price": 0,
-    "accessibility": "Major challenges",
-    "duration": "hours",
-    "kidFriendly": true,
-    "link": "",
-    "key": "8631548"
-  }`;
-  console.log(api);
-  let object=JSON.parse(api);  // converting JSON data(that api returns) in js object
+         //   iNTRODUCTION TO API                         
+                                //   let api=`{
+                                //     "activity": "Create a compost pile",
+                                //     "availability": 0.15,
+                                //     "type": "diy",
+                                //     "participants": 1,
+                                //     "price": 0,
+                                //     "accessibility": "Major challenges",
+                                //     "duration": "hours",
+                                //     "kidFriendly": true,
+                                //     "link": "",
+                                //     "key": "8631548"
+                                // }`;
+                                // console.log(api);
+                                // let object=JSON.parse(api);  // converting JSON data(that api returns) in js object
 
-  console.log(object.activity);
-  let own={     // own object
-    name:"Md sarfaraj",   
-    class:"x",
-    roll:125
-  };
-  console.log(own);
-  let json=JSON.stringify(own);   // converting own object to JSON value type
-  console.log(json);
-    </script>
+                                // console.log(object.activity);
+                                // let own={     // own object
+                                //     name:"Md sarfaraj",   
+                                //     class:"x",
+                                //     roll:125
+                                // };
+                                // console.log(own);
+                                // let json=JSON.stringify(own);   // converting own object to JSON value type
+                                // console.log(json);
+        // CREATING OUR FIRST API
+                                // let url="https://catfact.ninja/fact";
+                                // fetch(url)
+                                // .then((response)=>{
+                                //     console.log(response);
+                                // let changeFormat=response.json();// converting the data in readable format
+                                // console.log(changeFormat);
+                                //         return changeFormat;
+                                
+                                // })
+                                // .then((data)=>{
+                                //     console.log(data.fact);
+                                // })
+                                // .catch((err)=>{
+                                //     console.log(err);
+                                // });
+        //USING ASUNC AND AWAIT
+        let url="https://catfact.ninja/fact2";//  link of the api
+        async function getfacts()
+        {
+            try{
+                 let res=await fetch(url);  // wait till the api give response
+            console.log(res);
+            let data=await res.json();  // it is also a asyncronous function and return promise , so wait till response
+            // converting the res promise to json data , we can overcome it using axios
+            console.log(data.fact);
+            console.log("dur h");
+            }
+            catch(e)
+            {
+                console.log("dur h bhul address");
+            }
+           
+        }
+        getfacts();
+     </script>
     
 </body>
 </html>
