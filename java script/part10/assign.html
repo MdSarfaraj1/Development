@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Listeners Demo</title>
+<style>
+  body {
+    height: 2000px; /* For scrolling demonstration */
+  }
+  .content {
+    height: 1000px; /* For scrolling demonstration */
+    background-color: lightblue;
+    padding: 20px;
+    margin: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="content">
+  <h1>Event Listeners Demo</h1>
+  <p>This is a demo page to showcase event listeners for mouseout, load, and scroll events.</p>
+</div>
+
+<script>
+  // Mouseout event listener
+  window.addEventListener('mouseout', function(event) {
+    console.log('Mouse left the window or an element.');
+  });
+
+  // Load event listener
+  window.addEventListener('load', function(event) {
+    console.log('Page has finished loading.');
+  });
+
+  // Scroll event listener
+  window.addEventListener('scroll', function(event) {
+    console.log('Page is being scrolled.');
+  });
+</script>
+
+</body>
+</html>

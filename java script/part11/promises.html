@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function saveToDb(data,success,failure)
+        // {
+        //     let speed=Math.floor(Math.random()*10+1);
+        //     if(speed<4)
+        //     success();
+        // else
+        // failure();
+        // }
+        // ///// calback hell
+        // saveToDb("i",()=>{
+        //     console.log("data1 saved");
+        //     saveToDb("hate",()=>{
+        //         console.log("Data2 saved");
+        //         saveToDb("you",()=>{
+        //             console.log("data 3 saved");
+        //         },()=>{
+        //             console.log("Failur: Data3 not saved");
+        //         });
+        //     },()=>{
+        //         console.log("Failur: Data2 not saved");
+        //     });
+        // },()=>{
+        //     console.log("Failure: Data1 not saved");
+        // });
+
+        /////promses
+        function saveToDb(data)
+        {
+            return new Promise((resovled ,reject)=>{
+                let speed=Math.floor(Math.random()*10+1);
+                if(speed>4)
+                resovled("success1");
+            else
+            reject("failure1");
+            });
+        }
+    //    let promis= saveToDb("hello");
+    //    console.log(promis);
+    //    promis.then(()=>{
+    //     console.log("done");
+    //    })
+    //    .catch(()=>{
+    //     console.log("not done")
+    //    })
+
+    //compact verson of the above
+                    // saveToDb("hello")        
+                    //  .then(()=>{
+                    //      console.log("done");
+                    //     })
+                    // .catch(()=>{
+                    //      console.log("not done")
+                    //      });
+    // promise chaninig
+                    saveToDb("hello")        
+                     .then(()=>{
+                         console.log("1done1");
+                            saveToDb("world")
+                           .then(()=>{
+                            console.log("1done2");
+                           })
+                           // .catch is not needed , single catch in the end will handle all the .thens
+                        })
+                    .catch(()=>{
+                         console.log("1not done")
+                         });
+    // more improve version to avoid nested style loking
+    console.log("new function implementation");
+                        saveToDb("i")
+                            .then((result)=>{
+                                console.log("2"+result)// result contains the value tht Promise returns if  operation became succesfull
+                                console.log("2done3");
+                                return saveToDb("hate");
+                            })
+                            .then(()=>{
+                                console.log("2done4");
+                                return saveToDb("you");
+                            })
+                            .then(()=>{
+                                console.log("2done5");
+                            })
+                            .catch((error)=>{
+                                console.log(error);//  result contains the value tht Promise returns if  operation became failed
+                                console.log("2not done");
+                            });
+                        
+    </script>
+</body>
+</html>

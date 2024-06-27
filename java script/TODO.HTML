@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo app</h1>
+    <input placeholder="enter task">
+    <button>Add Task</button>
+    <ul>
+        <li>sleep  <button class="delete">delete</button></li>
+        <li>eat  <button class="delete">delete</button></li>
+    </ul>
+    <script>
+        document.querySelector("button").addEventListener("click",function(event){
+            let task=document.querySelector("input").value;
+          let item=document.createElement("li");
+          let d=document.createElement("button");
+          d.innerText="delete";
+          item.innerText=task;
+          d.classList.add("delete");
+          document.querySelector("ul").appendChild(item);
+      item.appendChild(d);
+        });
+
+        //// example of event delegation
+            // when new listy item will be created tis below event listner will not work over that element
+        // let dlts=document.querySelectorAll(".delete");
+        // for(btn of dlts)
+        // {
+        //     btn.addEventListener("click",function(event)
+        // {
+        //     let parent=this.parentElement;
+        //     parent.remove();
+
+        // }) 
+        // }
+
+        //// overcome from event dlegation
+        // add event listenr to the newly created elemnt's parent
+        let ul=document.querySelector("ul");
+        ul.addEventListener("click",function(event){
+            console.dir(event.target);
+            if(event.target.nodeName=="BUTTON")
+            {
+                let del=event.target.parentElement;
+                del.remove();
+            }
+        });
+    </script>
+</body>
+</html>

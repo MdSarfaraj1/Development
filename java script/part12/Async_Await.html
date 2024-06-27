@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <script>
+        let h1=document.querySelector("h1");
+        function change(color)  // will return a promise object
+        {
+            return new Promise((resolved,rejected)=>{
+                setTimeout(()=>{
+                  
+                    let random=Math.floor(Math.random()*10);
+                    if( random>4){
+                        h1.style.color=color;
+                        console.log(`color changed : ${color}`);
+                      resolved("color changed");
+                    }
+                    else
+                    rejected();
+                },1000);
+               
+              });
+            
+        }
+        async function demo() // async function implicitly return an promise object
+        {
+                                //  await change("blue");  // to use the await keyword the parent function must be async
+                                // await change("green");
+                                // await change("yellow");
+                                // await change("red");
+                                // await change("orange");
+                                // let a=5;
+                                // let b=6;
+                                // console.log("result is "+`${a+b}`);
+                            // this PRINTING line will not be executed if any of the above function is rejected
+            // to avoid this we have to use try and catch
+            try{
+                await change("blue");  
+            await change("green");
+            await change("yellow");
+            await change("red");
+            await change("orange");
+            }catch{
+                console.log("error occured");
+            }
+
+            let a=5;
+            let b=6;
+            console.log("result is "+`${a+b}`);                        
+
+        }
+        demo();
+    </script>
+</body>
+</html>

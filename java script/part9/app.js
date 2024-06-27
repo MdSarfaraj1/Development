@@ -33,6 +33,13 @@ container.append(para);
 
 let btn=document.createElement("button");
 let input=document.createElement("input");
+btn.classList.add("btnc");
 btn.innerText=("Click me");
 input.setAttribute("placeholder","username");
 btn.setAttribute("id","btn");
+let box=document.querySelector(".ab");
+box.append(btn,input);
+let h1=document.createElement("h1");
+h1.innerText=("DDOM parctise");
+h1.classList.add("hd");
+box.append(h1);

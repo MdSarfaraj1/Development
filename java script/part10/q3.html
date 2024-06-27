@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="enter your name" id="nameInput">
+    <h2 id="nameDisplay"></h2>
+
+    <script>
+        document.getElementById('nameInput').addEventListener('input', function(e) {
+            let input = e.target.value;
+            console.log(e);
+            // Remove any character that is not a letter or space
+            let sanitizedInput = input.replace(/[^a-zA-Z\s]/, '');
+            // Update the input value to the sanitized version
+         //  e.target.value = sanitizedInput;
+            // Display the sanitized input in the H2 heading
+            document.getElementById('nameDisplay').textContent = sanitizedInput;
+        });
+    </script>
+</body>
+</html>
