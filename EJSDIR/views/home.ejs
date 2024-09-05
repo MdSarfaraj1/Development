@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>by default express will seazrch for the folder named as views
+        as it think that views contains all the templetes which I want to render as response
+    </h1>
+    <h1> random value is <%=data%></h1>
+    <% if(data==6){%>
+    <h2>Very good</h2>
+    <% } %>
+    <ul>  <%
+         for(let user of followers){%>
+        <li><%=user%></li>
+        <%}%>
+    </ul> 
+   
+</body>
+</html>

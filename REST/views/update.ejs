@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/posts/<%=desirepost.id%>?_method=patch"> //changing post into patch
+        // html can only work wit get and post so to use patch we have to use package method-override
+        <textarea  name="content"><%=desirepost.content%></textarea><br>
+        <button>submit </button>
+    </form>
+</body>
+</html>

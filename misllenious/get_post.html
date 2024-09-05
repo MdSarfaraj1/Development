@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>get example</h1>  
+    <form action="http://192.168.255.109:8080/register" method="get">  
+    <!-- file:///C:/register?user=gtgrt&password=tuiui -->
+    <!-- as you can see that get method directly make visible of secret data in the url -->
+    <input type="text" placeholder="username" name="user">
+    <input type="password" placeholder="password" name="password">
+    <button>enter</button></form>
+
+    <br><hr>
+
+    <h1>post example</h1>
+    <form action="http://localhost:8080/register" method="post">
+          <!-- file:///C:/register -->
+         <!-- but  post method hides the data -->
+    <input type="text" placeholder="username" name="user">
+    <input type="password" placeholder="password" name="password">
+    <button>enter</button>
+     </form>
+    <script src="class.js"></script>
+</body>
+</html>

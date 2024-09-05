@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "have to create package.json for using import/export type:module -> this must be inlude the the package file of that directory wchich want to import things  ",
+  
+  "main": "math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "md sarfaraj",
+  "license": "ISC",
+  "type":"module" 
+}
