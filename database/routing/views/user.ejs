@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #4217dd;
+            padding: 8px;
+        }
+        th {
+            background-color: #eb4848;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #47da60;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th>ID</th><th>User</th><th>Email</th><th>hahaha</th></tr>
+        <% for(let i=0;i<data.length;i++){ %>
+            <tr>
+                <td><%=data[i]['id']%></td>
+                <td><%=data[i]['username']%></td>
+                <td><%=data[i]['email']%></td>
+                <td><form method="get" action="/user/<%=data[i]['id']%>/edit">
+                    <button>Edit username</button>
+                </form>
+            </tr></td>
+        <%}%>
+    </table>
+    <form method="get" action="/add">
+        <button>Add new User</button>
+    </form>
+</body>
+</html>
