@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #4217dd;
+            padding: 8px;
+        }
+        th {
+            background-color: #eb4848;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #47da60;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th>From</th><th>To</th><th>Message</th><th>Modify Message</th></tr>
+        <%chats.forEach(element => {%>
+            <tr><td><%=element.from%></td><td><%=element.to%></td><td><%=element.msg%></td>
+            <td><form method="get" action="/chats/<%=element._id%>/delete"  >
+                <button>Delete</button></form> 
+                <form method="get" action="/chats/<%=element._id%>/update"  >
+                  <button> &nbsp;Modify Message</button></form></td></tr>
+
+
+        <%})%>
+    </table>
+</body>
+</html>
