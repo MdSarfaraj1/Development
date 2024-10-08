@@ -1,0 +1,7 @@
+.bottom{
+    background-color: rgb(238 72 57);
+    height: 70px;
+    text-justify: center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

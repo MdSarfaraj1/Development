@@ -9,6 +9,8 @@ app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended:true}));
+//==-----------------------------
+const MyError=require("./MyError.js"); // for error handling excersise
 //------------------------------------------------------------------
 // making connections with mongodb
 async function main() {
@@ -32,17 +34,24 @@ res.render("All_chats.ejs",{chats});
 app.get("/chats/new",(req,res)=>{
     res.render("new.ejs");
 });
-app.post("/chats/new",async(req,res)=>{
+app.post("/chats/new",async(req,res,next)=>{
+try{
+   
     let newChat= new Chat(req.body);
 await newChat.save()
-.then((res)=>{
-    console.log(res);
-})
-.catch(()=>{
-    console.log("sopmething is wrong");
-})
-res.send("Your message is been send");
+// .then((res)=>{
+//     console.log(res);
+// })
+// .catch(()=>{
+//     console.log("sopmething is wrong");
+// })
+ res.send("Your message is been send");
+}catch(err){
+  next(err);
+}
 });
+
+
 //-----------------------------------------------------------------------------
 // UPDATE speific chat partially
 app.get("/chats/:id/update",async(req,res)=>{
@@ -80,8 +89,24 @@ app.delete("/chats/:id/delete",async(req,res)=>{
         })
         res.redirect("/chats");
 });
-
-
+//==================================================================
+//  the below is for excercise regarding asyncronous error
+app.get("/chats/:id",async(req,res,next)=>{
+    let{id}=req.params;
+    console.log("checking");
+    let chat=await Chat.findById(id);
+    if(!chat)
+    {
+         // throw new MyError(400,"hahaha error"); // will not work  as for asyncronus error express dont recognize them
+ next(new MyError(401,"hahaha error")); // explicitly put the error in next ,  see the notebook for more
+    }
+    res.render("update.ejs",{data:chat})
+}) 
+//----error handling middleware
+app.use((err,req,res,next)=>{
+    let {status=500,message="default erro message"}=err;
+    res.status(status).send(message); 
+})
 app.listen(port,()=>{
     console.log(`listing on port ${port}`);
-})
+})      

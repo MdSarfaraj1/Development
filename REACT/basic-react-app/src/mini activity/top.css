@@ -1,0 +1,8 @@
+.topPortion{
+    background-color: #1fb2c7;
+   width: 200px;
+   height: 170px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}

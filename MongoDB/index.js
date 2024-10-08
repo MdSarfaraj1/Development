@@ -11,7 +11,8 @@ main()
 })
 .catch(err => console.log("error hapende".err));
 //-----------------------------------------------------------
-//defining schema i.e. all documents have to follow this structure which will be inserted in collection that is modeled with this schema
+//defining schema i.e. all documents have to follow this structure 
+//which will be inserted in collection that is modeled(made according to this schema) with this schema
 const userSchema=new mongoose.Schema({
     name:String,
     email:String,

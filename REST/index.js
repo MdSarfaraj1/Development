@@ -13,8 +13,11 @@ const {v4: uuidv4}=require("uuid"); // requiring uuid for universally unique id 
 const methodOverride=require("method-override");
 
 
-app.use(express.urlencoded({extended:true}));
-app.use(methodOverride("_method"));
+app.use(express.urlencoded({extended:true}));    //encode into object 
+                                                // extended:true use qs library and support nested object but
+                                                 // extended:false dont support nested object and use querystring library
+                                               
+app.use(methodOverride("_method")); // comparing the _method's value present in the querystring sended by the form and converting the request to that value
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.static(path.join(__dirname,"public")));
@@ -53,7 +56,7 @@ app.post("/posts",(req,res)=>{  // taking post request for new posts
        res.redirect("/posts"); // redirecting to the route which name is posts after adding the new post to the array
 });
 app.get("/posts/:id",(req,res)=>{
-        let{id}=req.params;
+        let{id}=req.params;// extarcting the id param from req.params and directly assigning it to a variable named id
         let desirepost=posts.find( (p) => id === p.id);// finding post
         console.log(desirepost);
       req.render("showDesirePost.ejs",{desirepost});

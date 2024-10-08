@@ -36,10 +36,16 @@
             <td><form method="get" action="/chats/<%=element._id%>/delete"  >
                 <button>Delete</button></form> 
                 <form method="get" action="/chats/<%=element._id%>/update"  >
-                  <button> &nbsp;Modify Message</button></form></td></tr>
+                  <button> &nbsp;Modify Message</button></form>
+                  <form method="get" action="/chats/<%=element._id%>"  >
+                    <button> &nbsp;See</button></form>
+                </td>
+                
+                </tr>
 
 
         <%})%>
     </table>
+
 </body>
 </html>
